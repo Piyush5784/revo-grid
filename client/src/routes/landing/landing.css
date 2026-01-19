@@ -1,0 +1,460 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');
+
+/* Header Links */
+.header-link {
+  @apply text-center text-[15px] font-medium text-[#6A6C6A] cursor-pointer hover:bg-stone-200/50 rounded-full p-1 px-2 text-sm sm:p-2 sm:px-3 sm:text-base;
+}
+
+.landing-page {
+  @apply w-full;
+}
+
+.landing-header {
+  @apply border-b px-4 sm:px-6 md:px-8 w-full bg-white bg-stone-50/5 bg-clip-padding shadow-sm backdrop-blur-3xl backdrop-contrast-100 backdrop-saturate-100;
+}
+
+.landing-header-content {
+  @apply flex h-full items-center justify-between gap-1 w-full max-w-[1325px] mx-auto px-2 sm:px-4 md:px-8;
+}
+
+/* @apply border-x border-t px-4 sm:px-6 md:px-8 lg:px-12 max-w-[1500px] w-full sm:w-[95%] md:w-[95%] lg:w-[1500px] mx-auto bg-white; */
+
+
+
+
+/* Testimonial section specific styles */
+/* .testimonial-section .dotted-background {
+  @apply [background-image:radial-gradient(#d4d4d4_1px, transparent_1px)] [background-size:20px_20px] dark:[background-image:radial-gradient(#404040_1px, transparent_1px)];
+} */
+
+/* .testimonial-section .radial-mask {
+  @apply pointer-events-none bg-white [mask-image:radial-gradient(ellipse_at_center, transparent_20%, black)] dark:bg-black;
+} */
+
+/* Badge styles */
+.badge-primary {
+  @apply bg-[#f5f5f4] text-[#1c1917] border border-[#a8a29e] rounded-full px-4 py-1;
+}
+
+.landing-section {
+  @apply max-w-7xl mx-auto py-3 px-3 sm:px-6;
+}
+
+/* Fade-in-up animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.8s ease-in-out forwards;
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 0.40;
+  }
+
+  40% {
+    opacity: 1;
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse 10s infinite;
+}
+
+/* Background styles */
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  color: #1A4A5A !important;
+}
+
+.background-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  overflow: hidden;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  /* Ensures content is above the background */
+  color: white;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.background-shape {
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  width: 900px;
+  height: auto;
+  z-index: 1;
+  /* Ensures shape is behind the content */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .landing-header {
+    @apply px-3 py-2;
+  }
+
+  .landing-section {
+    @apply w-full;
+  }
+}
+
+@media (max-width: 640px) {
+  .landing-header {
+    @apply w-[98%];
+  }
+
+  .landing-section {
+    @apply w-[98%];
+  }
+}
+
+@media (max-width: 1440px) {
+  .landing-section {
+    @apply w-full;
+  }
+}
+
+/*  Timeline title animation styles */
+.timeline-title {
+  background: linear-gradient(90deg, #292524 0%, #1c1917 100%);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-shift 8s ease infinite;
+  position: relative;
+}
+
+.timeline-title::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 64px;
+  /* Adjust based on your pl-16 padding */
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #292524 0%, #fb923c 100%);
+  transition: width 0.6s ease;
+}
+
+.timeline-title:hover::after {
+  width: 70%;
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Timeline description animation styles */
+.timeline-description {
+  position: relative;
+  overflow: hidden;
+}
+
+.timeline-description::before {
+  content: '';
+  position: absolute;
+  left: 64px;
+  /* Match the pl-16 padding */
+  bottom: -2px;
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(90deg, #fb923c 0%, transparent 100%);
+  opacity: 0.7;
+  transition: width 0.5s ease;
+}
+
+.timeline-description:hover::before {
+  width: 100px;
+}
+
+/* Timeline bullet styles */
+.timeline-bullet {
+  background: linear-gradient(90deg, #fd9800 0%, #fb923c 100%);
+  background-size: 200% auto;
+  animation: gradient-shift 8s ease infinite;
+  box-shadow: 0 0 5px rgba(251, 146, 60, 0.3);
+}
+
+/* Timeline vertical line styles */
+.timeline-vertical-line {
+  background: linear-gradient(to top, #fd9800 0%, #fb923c 40%, rgba(251, 146, 60, 0.3) 100%);
+  box-shadow: 0 0 8px rgba(251, 146, 60, 0.4);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-origin: top;
+  transition: height 0.1s ease-out;
+}
+
+/* Metrics styling */
+.metric-container {
+  position: relative;
+  border-left: 4px solid transparent;
+  background-image: linear-gradient(white, white), linear-gradient(to bottom, #fd9800, #fb923c);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  transition: transform 0.3s ease;
+  overflow: hidden;
+  max-width: 90%;
+  width: fit-content;
+}
+
+.metric-container:hover {
+  transform: translateY(-5px);
+}
+
+.metric-container::before {
+  content: '';
+  position: absolute;
+  left: -4px;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, #fd9800, #fb923c);
+  animation: pulse-glow 3s infinite;
+}
+
+.metric-value {
+  position: relative;
+  display: inline-block;
+}
+
+.metric-value::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #fd9800 0%, #fb923c 100%);
+  transition: width 0.6s ease;
+}
+
+.metric-container:hover .metric-value::after {
+  width: 50%;
+}
+
+/* CTA Animation Styles */
+.animated-cta {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(249, 115, 22, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.animated-cta:hover {
+  transform: translateY(-5px);
+}
+
+.triangle-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 15 L85 85 L15 85 Z' fill='none' stroke='white' stroke-width='1'/%3E%3C/svg%3E");
+  background-size: 100px 100px;
+  animation: patternMove 40s linear infinite;
+}
+
+@keyframes patternMove {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 1000px 1000px;
+  }
+}
+
+@keyframes pulse-slow {
+
+  0%,
+  100% {
+    opacity: 0.1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.2;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+  }
+}
+
+@keyframes pulse-slower {
+
+  0%,
+  100% {
+    opacity: 0.1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.2;
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 8s infinite;
+}
+
+.animate-pulse-slower {
+  animation: pulse-slower 12s infinite;
+}
+
+/* Shine effect similar to timeline */
+.animated-cta::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(to right,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.1) 50%,
+      rgba(255, 255, 255, 0) 100%);
+  transform: rotate(30deg);
+  animation: shine 10s infinite;
+}
+
+@keyframes shine {
+  0% {
+    transform: rotate(30deg) translateX(-100%);
+  }
+
+  20%,
+  100% {
+    transform: rotate(30deg) translateX(100%);
+  }
+}
+
+/* Button hover effects similar to timeline */
+.animated-cta button {
+  position: relative;
+  overflow: hidden;
+}
+
+.animated-cta button::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #f97316 0%, transparent 100%);
+  transition: width 0.6s ease;
+}
+
+.animated-cta button:hover::after {
+  width: 100%;
+}
+
+@keyframes aurora {
+  from {
+    background-position:
+      50% 50%,
+      50% 50%;
+  }
+
+  to {
+    background-position:
+      350% 50%,
+      350% 50%;
+  }
+}
+
+.animate-aurora {
+  animation: aurora 60s linear infinite;
+}
+
+
+/* Add to your CSS file */
+.marquee-container {
+  overflow: hidden;
+  width: 50%;
+  position: relative;
+  height: 100px;
+  /* Adjust as needed */
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 20s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(50%);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-container:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes scrollUp {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-33.33%);
+  }
+}
+
+@keyframes scrollDown {
+  0% {
+    transform: translateY(-33.33%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.animate-scrollUp {
+  animation: scrollUp 30s linear infinite;
+}
+
+.animate-scrollDown {
+  animation: scrollDown 30s linear infinite;
+}

@@ -1,0 +1,20 @@
+{
+	"files.exclude": {
+		"**/.git": true,
+		"**/.svn": true,
+		"**/.hg": true,
+		"**/CVS": true,
+		"**/.DS_Store": true,
+		"**/Thumbs.db": true,
+		"**/.sync": true,
+		"**/vite-env.d.ts": true,
+		"**/node_modules": true,
+		"**/bun.lockb": true,
+		"**/.wrangler/**": true
+	},
+	"hide-files.files": [],
+	"typescript.tsdk": "node_modules/typescript/lib",
+	"editor.codeActionsOnSave": {
+		"source.fixAll": "explicit"
+	}
+}

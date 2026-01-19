@@ -1,0 +1,45 @@
+
+{
+	"compilerOptions": {
+		/* Base Options */
+		"esModuleInterop": true,
+		"skipLibCheck": true,
+		"target": "ES2022",
+		"moduleDetection": "force",
+		"isolatedModules": true,
+		"verbatimModuleSyntax": true,
+		/* Module */
+		"composite": true,
+		"forceConsistentCasingInFileNames": true,
+		"emitDeclarationOnly": true,
+		"allowImportingTsExtensions": false,
+		"jsx": "react-jsx",
+		/* Strictness & Rules */
+		"strict": true,
+		"noUncheckedIndexedAccess": true,
+		"noImplicitOverride": true,
+		"useDefineForClassFields": true,
+		"noUnusedLocals": false,
+		"noUnusedParameters": true,
+		"noFallthroughCasesInSwitch": true,
+		/* Paths */
+		"baseUrl": ".",
+		"paths": {
+			"~client/*": [
+				"./client/src/*"
+			],
+			"@/*": ["./client/src/*"]
+		}
+	},
+	"exclude": [
+		"**/node_modules",
+		"**/dist"
+	],
+	// "files": [],
+	"references": [
+		{
+			"path": "./client/tsconfig.json"
+		},
+		
+	]
+}

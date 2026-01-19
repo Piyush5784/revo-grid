@@ -1,0 +1,135 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+
+		// Server & Client split terminal task
+		{
+			"label": "dev",
+			"dependsOrder": "parallel",
+			"dependsOn": [
+				"dev:client",
+				"dev:server"
+			],
+			"presentation": {
+				"group": "both",
+				"panel": "shared"
+			},
+			"isBackground": true,
+			"problemMatcher": [
+				"$tsc-watch"
+			]
+		},
+
+		// Client task
+		{
+			"label": "dev:client",
+			"type": "shell",
+			"command": "bun run dev:client",
+			"presentation": {
+				"group": "both",
+				"panel": "shared",
+				"showReuseMessage": false,
+				"clear": true
+			},
+			"isBackground": true,
+			"problemMatcher": [
+				"$tsc-watch"
+			]
+		},
+
+		// Server task
+		{
+			"label": "dev:server",
+			"type": "shell",
+			"command": "bun run dev:server",
+			"presentation": {
+				"group": "both",
+				"panel": "shared",
+				"showReuseMessage": false,
+				"clear": true
+			},
+			"isBackground": true,
+			"problemMatcher": [
+				"$tsc-watch"
+			]
+		},
+
+		// Bun Run Current File task
+		{
+			"label": "bun:run",
+			"type": "shell",
+			"command": "bun run ${file}",
+			"presentation": {
+				"reveal": "always",
+				"panel": "shared",
+				"clear": true
+			},
+			"problemMatcher": []
+		},
+		// Bun Debug Current File task
+		{
+			"label": "bun:debug",
+			"type": "shell",
+			"command": "bun --inspect ${file}",
+			"presentation": {
+				"reveal": "always",
+				"panel": "shared",
+				"clear": true
+			},
+			"problemMatcher": []
+		},
+
+		// Deploy Tasks
+		// Server & Client split terminal task
+		{
+			"label": "deploy",
+			"dependsOrder": "parallel",
+			"dependsOn": [
+				"deploy:client",
+				"deploy:server"
+			],
+			"presentation": {
+				"group": "both",
+				"panel": "shared"
+			},
+			"isBackground": true,
+			"problemMatcher": [
+				"$tsc-watch"
+			]
+		},
+
+		// Client task
+		{
+			"label": "deploy:client",
+			"type": "shell",
+			"command": "bun run deploy:client",
+			"presentation": {
+				"group": "both",
+				"panel": "shared",
+				"showReuseMessage": false,
+				"clear": true
+			},
+			"isBackground": true,
+			"problemMatcher": [
+				"$tsc-watch"
+			]
+		},
+
+		// Server task
+		{
+			"label": "deploy:server",
+			"type": "shell",
+			"command": "bun run deploy:server",
+			"presentation": {
+				"group": "both",
+				"panel": "shared",
+				"showReuseMessage": false,
+				"clear": true
+			},
+			"isBackground": true,
+			"problemMatcher": [
+				"$tsc-watch"
+			]
+		}
+	]
+}

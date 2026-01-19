@@ -1,0 +1,35 @@
+.mantine-Button-root {
+
+	/* Default variant */
+	&[data-variant='default']:not([data-disabled='true']) {
+		&:hover {
+			background-color: var(--color-hover);
+		}
+	}
+
+	/* Primary variant */
+	&[data-variant='primary']:not([data-disabled='true']) {
+		background-color: var(--btn-default);
+
+		.mantine-Button-label {
+			color: var(--btn-reverse);
+		}
+	}
+
+	/* Primary inverse variant */
+	&[data-variant='primary-inverse']:not([data-disabled='true']) {
+		background-color: var(--btn-reverse);
+		border-color: var(--bd-strong);
+
+		.mantine-Button-label {
+			color: var(--btn-default);
+		}
+	}
+}
+
+
+.mantine-Button-section {
+	&[data-position='left'] {
+		margin-right: 7px;
+	}
+}
