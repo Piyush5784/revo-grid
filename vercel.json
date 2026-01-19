@@ -1,6 +1,6 @@
 {
-  "installCommand": "cd client && bun install",
-  "buildCommand": "cd client && bun run build",
+  "installCommand": "bun install",
+  "buildCommand": "bun run build",
   "outputDirectory": "client/dist",
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
